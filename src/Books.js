@@ -29,7 +29,7 @@ function Books (props) {
             <div className="book-title">{book.bookTitle}</div>
               {book.authors !== undefined && (
                 book.authors.map((author) =>
-                  <div className="book-authors" key={book.id}>{author}</div>
+                  <div className="book-authors" key={author}>{author}</div>
                 )
               )}
           
