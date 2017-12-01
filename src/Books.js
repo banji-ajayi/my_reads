@@ -17,6 +17,7 @@ function Books (props) {
                 backgroundImage: `url(${book.imageLinks.thumbnail})` }}></div>
               <div className="book-shelf-changer">
                 <select   onChange={(event) => props.onChangeBookState(event, book)}>
+                {console.log(book)}
                 <option value="">Select Book State</option>                
                   <option value="currentlyReading">Currently Reading</option>
                   <option value="wantToRead">Want to Read</option>
@@ -28,7 +29,7 @@ function Books (props) {
             <div className="book-title">{book.bookTitle}</div>
               {book.authors !== undefined && (
                 book.authors.map((author) =>
-                  <div className="book-authors">{author}</div>
+                  <div className="book-authors" key={book.id}>{author}</div>
                 )
               )}
           

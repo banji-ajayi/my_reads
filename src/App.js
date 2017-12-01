@@ -40,7 +40,8 @@ class BooksApp extends React.Component {
     BooksAPI.update(book, event.target.value).then((books) => {
       //BooksAPI.getAll().then((books) => {
         this.setState((state) => ({
-          myBooks: state.myBooks.map((b) => b === books) //!== null ? myBooks : alert("No books found")
+          myBooks: state.myBooks !== null ? (state.myBooks.map((b) => b === books)) : alert("No books found")
+          //myBooks: state.myBooks !== null ? myBooks : alert("No books found")
         
       }))
    // })
