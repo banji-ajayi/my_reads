@@ -16,9 +16,6 @@ MY_READS/
     favicon.ico
   src/
     icons/
-	  add.svg
-	  arrow-back.svg
-	  arrow-drop-down.svg
     App.css
     App.js
     BooksAPI.js
