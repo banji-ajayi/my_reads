@@ -8,15 +8,15 @@ The project was bootstrapped with [Create React App](https://github.com/facebook
 
 ```
 MY_READS
-   node_modules/
-   public/
+    node_modules/
+    public/
       favicon.ico
 	  index.html
    src/
       icons/
-	     add.svg
-		 arrow-back.svg
-		 arrow-drop-down.svg
+	    add.svg
+		arrow-back.svg
+		arrow-drop-down.svg
       App.css
 	  App.js
 	  App.test.js
