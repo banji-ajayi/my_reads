@@ -1,10 +1,10 @@
-#My Reads : A Book Tracking App
+# My Reads : A Book Tracking App
 
 This is a bookshelf app that lets you to organize books that you have read.
 The project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app)
 
 
-###Folder Structure
+### Folder Structure
 
 ```
 MY_READS
@@ -28,7 +28,7 @@ MY_READS
 	README.md
 ```
 
-###Available Scripts
+### Available Scripts
 
 Run the project:
 	`npm start`
