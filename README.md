@@ -7,26 +7,20 @@ The project was bootstrapped with [Create React App](https://github.com/facebook
 ### Folder Structure
 
 ```
-MY_READS
-    node_modules/
-    public/
-    	favicon.ico
-		index.html
-    src/
-    	icons/
-	    	add.svg
-			arrow-back.svg
-			arrow-drop-down.svg
-
-    	App.css
-		App.js
-		App.test.js
-		Books.js
-		BooksAPI.js
-		index.css
-		index.js
-  	package.json
-  	README.md
+MY_READS/
+  README.md
+  node_modules/
+  package.json
+  public/
+    index.html
+    favicon.ico
+  src/
+    App.css
+    App.js
+    App.test.js
+    index.css
+    index.js
+    logo.svg
 ```
 
 ### Available Scripts
