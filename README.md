@@ -10,23 +10,23 @@ The project was bootstrapped with [Create React App](https://github.com/facebook
 MY_READS
     node_modules/
     public/
-      favicon.ico
-	  index.html
-   src/
-      icons/
-	    add.svg
-		arrow-back.svg
-		arrow-drop-down.svg
-		
-      App.css
-	  App.js
-	  App.test.js
-	  Books.js
-	  BooksAPI.js
-	  index.css
-	  index.js
-	package.json
-	README.md
+    	favicon.ico
+		index.html
+    src/
+    	icons/
+	    	add.svg
+			arrow-back.svg
+			arrow-drop-down.svg
+
+    	App.css
+		App.js
+		App.test.js
+		Books.js
+		BooksAPI.js
+		index.css
+		index.js
+  	package.json
+  	README.md
 ```
 
 ### Available Scripts
