@@ -15,12 +15,15 @@ MY_READS/
     index.html
     favicon.ico
   src/
+    icons/
+	  add.svg
+	  arrow-back.svg
+	  arrow-drop-down.svg
     App.css
     App.js
-    App.test.js
+    BooksAPI.js
     index.css
     index.js
-    logo.svg
 ```
 
 ### Available Scripts
