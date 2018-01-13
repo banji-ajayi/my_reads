@@ -50,12 +50,26 @@ class BooksApp extends React.Component {
 
 
   queryBooks(query) {
-    BooksAPI.search(query, 30).then((booksReturned) => {
-      booksReturned.map(gotBook =>
-        this.state.myBooks.filter(book => book.id === gotBook.id)
-      )
-      this.setState({ booksReturned })
-    })
+	//   let booksReturned = [];
+	  let queryResults = [];
+
+	  
+    BooksAPI.search(query, 30).then((results) => {
+		if (results && results.length) {
+     queryResults = results.map(gotBook => {
+		gotBook.shelf = this.state.myBooks.filter(book => book.id === gotBook.id)
+		return gotBook;
+		// return gotBook.length ? gotBook[0].shelf : "none";
+        // this.state.myBooks.filter(book => book.id === gotBook.id)
+	 })
+	  this.setState({ booksReturned: queryResults })
+	} else {
+		this.setState({
+		  booksReturned: []
+		});
+	}
+      });
+	
   }
 
   updateQuery = (query) => {
