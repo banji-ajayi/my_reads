@@ -48,29 +48,19 @@ class BooksApp extends React.Component {
     
   }
 
-
   queryBooks(query) {
-	//   let booksReturned = [];
-	  let queryResults = [];
+	// let queryResults = [];
+    BooksAPI.search(query, 30).then((booksReturned) => {
+      booksReturned.map(gotBook =>
+		this.state.myBooks.filter(book => book.id === gotBook.id) && (
+			booksReturned.shelf = this.state.myBooks.filter(book => book.id === gotBook.id[0].shelf)
+		)
 
-	  
-    BooksAPI.search(query, 30).then((results) => {
-		if (results && results.length) {
-     queryResults = results.map(gotBook => {
-		gotBook.shelf = this.state.myBooks.filter(book => book.id === gotBook.id)
-		return gotBook;
-		// return gotBook.length ? gotBook[0].shelf : "none";
-        // this.state.myBooks.filter(book => book.id === gotBook.id)
-	 })
-	  this.setState({ booksReturned: queryResults })
-	} else {
-		this.setState({
-		  booksReturned: []
-		});
-	}
-      });
-	
+      )
+      this.setState({booksReturned})
+    })
   }
+
 
   updateQuery = (query) => {
     this.setState({ query: query.trim() })
@@ -126,7 +116,7 @@ class BooksApp extends React.Component {
                     {booksReturned.length ? (<Books myBooks={booksReturned} onChangeBookState={this.changeBookState} />) :
                      ( <div>No results.</div>
                     )}
-                  </div>
+				  </div>
                 </div>
               )}
             </div>          
