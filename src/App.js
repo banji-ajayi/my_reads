@@ -49,15 +49,14 @@ class BooksApp extends React.Component {
   }
 
   queryBooks(query) {
-	// let queryResults = [];
-    BooksAPI.search(query, 30).then((booksReturned) => {
-      booksReturned.map(gotBook =>
-		this.state.myBooks.filter(book => book.id === gotBook.id) && (
-			booksReturned.shelf = this.state.myBooks.filter(book => book.id === gotBook.id[0].shelf)
-		)
-
-      )
-      this.setState({booksReturned})
+    BooksAPI.search(query, 30).then((booksFromSearch) => {
+		this.props.myBooks.forEach(bookInShelf => {
+			const sameBook = booksFromSearch.find((gotBook) => gotBook.id === bookInShelf.id);
+			if (sameBook) {
+				sameBook.shelf = bookInShelf.shelf;
+			  }
+		})
+      this.setState({booksReturned: booksFromSearch})
     })
   }
 
