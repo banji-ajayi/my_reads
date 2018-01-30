@@ -7,6 +7,7 @@ import Books from './Books'
 import { Link } from 'react-router-dom'
 import { Route } from 'react-router-dom'
 import './App.css'
+import { debounce } from 'throttle-debounce'
 
 class BooksApp extends React.Component {
 
@@ -48,17 +49,18 @@ class BooksApp extends React.Component {
     
   }
 
-  queryBooks(query) {
+ queryBooks = debounce(2000, (query) => {
     BooksAPI.search(query, 30).then((booksFromSearch) => {
-		this.props.myBooks.forEach(bookInShelf => {
+		console.log(booksFromSearch);
+		this.state.myBooks.forEach(bookInShelf => {
 			const sameBook = booksFromSearch.find((gotBook) => gotBook.id === bookInShelf.id);
 			if (sameBook) {
 				sameBook.shelf = bookInShelf.shelf;
-			  }
+			}
 		})
-      this.setState({booksReturned: booksFromSearch})
+      	this.setState({booksReturned: booksFromSearch})
     })
-  }
+  })
 
 
   updateQuery = (query) => {
