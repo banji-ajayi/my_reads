@@ -49,16 +49,19 @@ class BooksApp extends React.Component {
     
   }
 
- queryBooks = debounce(2000, (query) => {
+ queryBooks = debounce(500, (query) => {
     BooksAPI.search(query, 30).then((booksFromSearch) => {
-		console.log(booksFromSearch);
-		this.state.myBooks.forEach(bookInShelf => {
-			const sameBook = booksFromSearch.find((gotBook) => gotBook.id === bookInShelf.id);
-			if (sameBook) {
-				sameBook.shelf = bookInShelf.shelf;
-			}
-		})
-      	this.setState({booksReturned: booksFromSearch})
+		if(!booksFromSearch || booksFromSearch.hasOwnProperty('error')) {
+            this.setState({ booksReturned: [] })
+        } else {
+			this.state.myBooks.forEach(bookInShelf => {
+				const sameBook = booksFromSearch.find((gotBook) => gotBook.id === bookInShelf.id);
+				if (sameBook) {
+					sameBook.shelf = bookInShelf.shelf;
+				}
+			}) 
+		  this.setState({booksReturned: booksFromSearch})
+	    }
     })
   })
 
