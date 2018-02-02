@@ -16,7 +16,7 @@ function Books (props) {
               <div className="book-cover" style={{ width: 126, height: 193, 
                 backgroundImage: `url(${book.imageLinks.thumbnail})` }}></div>
               <div className="book-shelf-changer">
-                <select   onChange={(event) => props.onChangeBookState(event, book)} value={book.shelf ? book.shelf : ''}>
+                <select   onChange={(event) => props.onChangeBookState(event, book)} value={book.shelf ? book.shelf : 'none'}>
                
                 <option value="">Select Book State</option>                
                   <option value="currentlyReading">Currently Reading</option>
